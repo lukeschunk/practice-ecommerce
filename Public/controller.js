@@ -2,11 +2,13 @@ myApp.controller("myController", ["$scope", "mainService", "$http", function ($s
     $scope.test = "MY PRODUCTS TO SELL";
 
     $scope.getProducts = function () {
+        console.log("1");
         mainService.getProducts()
             .then(function (response) {
+            console.log("3");
                 $scope.products = response.data;
             })
-    }
+    } 
 
     $scope.foo = {
         name: "testy",

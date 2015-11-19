@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Product = Schema({
-    name: String,
+    name: { type: String, unique: true },
     Price: Number
     
     

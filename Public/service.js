@@ -1,12 +1,19 @@
 myApp.service('mainService', function ($q, $http) {
+  
+    
     
  this.getProducts = function () {
-
+        console.log("2");
         return $http.get('/products')
             .then(function (response) {
+            console.log("4");
                 return response;
             });
     };
+    
+    
+    
+    
 
 this.postNewProduct = function(product) {
         return $http.post('/products', product)
@@ -33,3 +40,24 @@ this.postNewProduct = function(product) {
 
 
 })
+
+
+var counter = getCounter();
+
+function getCounter() {
+    var myCounter = 0;
+    
+    return function() {
+        myCounter += 2;
+        return myCounter;
+    }
+    
+}
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+
+
