@@ -8,38 +8,28 @@ myApp.service('mainService', function ($q, $http) {
             });
     };
 
-    
-    
-    
-    
-
-    this.getProductById = function (id) {
-
-        return $http.get('/products/' + id)
+this.postNewProduct = function(product) {
+        return $http.post('/products', product)
             .then(function (response) {
 
                 console.log(response);
-                return response;
+                return "we just added a new product";
             }, function (error) {
-
                 console.log(error);
-                return "sorry, there is nobody by that id";
+                return error;
             });
     };
+    
+    
+ //_____________________________________________ ATTEMPT TO RUN DELETE ON SERVICE _____________________________________________   
+//this.deleteAProduct = function( productId ) {
+//    $http.delete('/product/' + productId)
+//        .then(function(response) {
+//        console.log("hey it's sort of working");
+//    })
+//}    
 
 
-//    this.postNewFriend = function (friend) {
-//
-//        return $http.post('/api/friends', friend)
-//            .then(function (response) {
-//
-//                console.log(response);
-//                return "friend added!";
-//            }, function (error) {
-//                console.log(error);
-//                return error;
-//            });
-//    };
 
 
 })

@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title> E COMMERCE SHELL </title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 </head>
 <body ng-controller="myController">
     
     <h1> {{ test }} </h1>
     
-    <h2 ng-repeat="product in products"> {{product.name }} </h2>
+    <h4 ng-repeat="product in products track by $index" ng-click="deleteAProduct(product._id)"> {{product.name }} </h2>
     
     <input placeholder="ID" ng-model="id"> <button ng-click="getProductById(id)"> Click to Get Product By Id </button>
     <h2> This is by ID</h2>
     <h2> {{ foo.name }} </h2>
+    
+    <br> 
+    <br>
+    <h2> So, you want to add a product to sell? </h2>
+    <input placeholder="name" type="text" ng-model="productToPost.name">
+    <input placeholder="price" type="number" ng-model="productToPost.price">
+    <button ng-click="postProduct(productToPost)"> Click me to Add Product </button>
     
     <script src="module.js"></script>
     <script src="controller.js"></script>
