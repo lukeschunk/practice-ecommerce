@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title> E COMMERCE SHELL </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+</head>
+<body ng-controller="myController">
+    
+    <h1> {{ test }} </h1>
+    
+    <h2 ng-repeat="product in products"> {{product.name }} </h2>
+    
+    <input placeholder="ID" ng-model="id"> <button ng-click="getProductById(id)"> Click to Get Product By Id </button>
+    <h2> This is by ID</h2>
+    <h2> {{ foo.name }} </h2>
+    
+    <script src="module.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+</body>
+</html>
